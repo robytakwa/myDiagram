@@ -1,21 +1,23 @@
 
-package com.xxmassdeveloper.mpchartexample.notimportant;
+package com.example.mydiagram;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import com.google.android.material.snackbar.Snackbar;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+
 import com.github.mikephil.charting.charts.Chart;
-import com.xxmassdeveloper.mpchartexample.R;
+import com.github.mikephil.charting.data.BarEntry;
+import com.google.android.material.snackbar.Snackbar;
+
+import java.util.List;
 
 /**
  * Base class of all Activities of the Demo Application.
@@ -55,11 +57,12 @@ public abstract class DemoBase extends AppCompatActivity implements ActivityComp
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        overridePendingTransition(R.anim.move_left_in_activity, R.anim.move_right_out_activity);
+//        overridePendingTransition(R.anim.move_left_in_activity, R.anim.move_right_out_activity);
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == PERMISSION_STORAGE) {
             if (grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 saveToGallery();
@@ -96,4 +99,6 @@ public abstract class DemoBase extends AppCompatActivity implements ActivityComp
     }
 
     protected abstract void saveToGallery();
+
+
 }

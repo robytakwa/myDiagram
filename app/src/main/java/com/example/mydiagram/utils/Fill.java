@@ -1,4 +1,4 @@
-package com.github.mikephil.charting.utils;
+package com.example.mydiagram.utils;
 
 import android.graphics.Canvas;
 import android.graphics.LinearGradient;
@@ -9,6 +9,8 @@ import android.graphics.drawable.Drawable;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.github.mikephil.charting.utils.Utils;
 
 public class Fill
 {
@@ -325,6 +327,7 @@ public class Fill
             break;
         }
     }
+
 
     private boolean isClipPathSupported()
     {
